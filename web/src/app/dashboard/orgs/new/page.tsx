@@ -267,10 +267,10 @@ function SuccessScreen({ record, path }: { record: IndexRecord; path: HostingPat
           </Link>
         )}
         {(path === "smb" || path === "personal") && (
-          <a href="https://list39.org" target="_blank" rel="noopener noreferrer"
+          <a href="https://host39.org" target="_blank" rel="noopener noreferrer"
             className="flex flex-col rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-sm">
-            <span className="text-sm font-semibold text-slate-950">Manage on list39.org →</span>
-            <span className="mt-0.5 text-xs text-slate-500">Update your agent card on list39.org.</span>
+            <span className="text-sm font-semibold text-slate-950">Manage on host39.org →</span>
+            <span className="mt-0.5 text-xs text-slate-500">Update your agent card on host39.org.</span>
           </a>
         )}
         {path === "dns-aid" && (
@@ -491,10 +491,10 @@ export default function NewOrgPage() {
                 description="Publish agent discovery via DNS records. NandaIndex acts as a federated pointer." />
               <PathCard value="smb" selected={form.hosting_path} onSelect={patchPath}
                 title="SMB Agent Card" subtitle="Small Business"
-                description="You own a domain but don't run infrastructure. Host your agent card on list39.org." />
+                description="You own a domain but don't run infrastructure. Host your agent card on host39.org." />
               <PathCard value="personal" selected={form.hosting_path} onSelect={patchPath}
                 title="Personal Agent" subtitle="Individual"
-                description="No domain needed. Your email is your identity. Host your agent card on list39.org." />
+                description="No domain needed. Your email is your identity. Host your agent card on host39.org." />
             </div>
 
             <Field label="Org ID" value={form.org_id} onChange={(v) => patch("org_id", v)}
@@ -617,7 +617,7 @@ export default function NewOrgPage() {
                   <p className="text-xs font-semibold text-sky-800">Before you continue</p>
                   <p className="mt-0.5 text-xs text-sky-700">
                     Create your agent card on{" "}
-                    <a href="https://list39.org" target="_blank" rel="noopener noreferrer" className="underline">list39.org</a>
+                    <a href="https://host39.org" target="_blank" rel="noopener noreferrer" className="underline">host39.org</a>
                     {" "}first, then paste the card URL below.
                   </p>
                 </div>
@@ -626,8 +626,8 @@ export default function NewOrgPage() {
                   onChange={(v) => patch("registry_url", v)} onBlur={() => touch("registry_url")}
                   placeholder={
                     form.hosting_path === "smb"
-                      ? "https://agentcards.list39.org/moonbakery.com/orders.json"
-                      : "https://agentcards.list39.org/personal/john@hotmail.com/card.json"
+                      ? "https://agentcards.host39.org/moonbakery.com/orders.json"
+                      : "https://agentcards.host39.org/personal/john@hotmail.com/card.json"
                   }
                   hint="The URL of your A2A Agent Card."
                   error={visible("registry_url")} />
